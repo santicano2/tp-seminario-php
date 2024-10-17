@@ -28,6 +28,9 @@
 						<li>
 							<a class="dropdown-item" href="<?php echo base_url('espectaculos'); ?>">Lista de espectáculos</a>
 						</li>
+						<li>
+							<a class="dropdown-item" href="<?php echo base_url('/espectaculos/create'); ?>">Agregar espectáculo</a>
+						</li>
 					</ul>
 				</li>
 			</ul>

@@ -8,13 +8,13 @@ class Espectaculos extends CI_Controller {
 
 	public function index() {
 
-		$mainData = [
+		$main_data = [
 			'title' => 'Lista de espectáculos',
 			'innerViewPath' => 'espectaculos/index',
 			'espectaculos' => $this->espectaculo_model->get_all_espectaculos()
 		];
 
-		$this->load->view('layouts/main', $mainData);
+		$this->load->view('layouts/main', $main_data);
 	}
 
 	public function show($id) {
@@ -24,21 +24,32 @@ class Espectaculos extends CI_Controller {
 			show_404();
 		}
 
-		$mainData = [
+		$main_data = [
 			'title' => 'Espectáculo #' . $id,
 			'innerViewPath' => 'espectaculos/show',
 			'espectaculo' => $espectaulo
 		];
 
-		$this->load->view('layouts/main', $mainData);
+		$this->load->view('layouts/main', $main_data);
 	}
 
 	public function create() {
-		echo "Ruta espectaculos/create";
+		$main_data = [
+			'title' => 'Agregar espectáculo',
+			'innerViewPath' => 'espectaculos/create',
+		];
+
+		$this->load->view('layouts/main', $main_data);
 	}
 
 	public function store() {
+		$espectaculo_data = [
+			'name' => $this->input->post('name'),
+			'price' => $this->input->post('price')
+		];
 
+		$this->espectaculo_model->add_new_espectaculo($espectaculo_data);
+		redirect('espectaculos');
 	}
 
 	public function edit($id) {

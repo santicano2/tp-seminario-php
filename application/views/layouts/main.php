@@ -13,7 +13,7 @@
 	</head>
 	<body class="d-flex flex-column min-vh-100 m-0 p-0">
 		<?php $this->load->view('components/navbar') ?>
-		<main class="bg-dark bg-gradient flex-grow-1 text-white w-100">
+		<main class="d-flex flex-column align-items-center flex-grow-1 bg-dark bg-gradient flex-grow-1 text-white w-100">
 			<?php $this->load->view($innerViewPath) ?>
 		</main>
 		<?php $this->load->view('components/footer') ?>

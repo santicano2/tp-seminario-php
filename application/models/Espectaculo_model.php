@@ -16,4 +16,8 @@ class Espectaculo_model extends CI_Model {
 		$query = $this->db->get_where('espectaculos', ['id' => $id]);
 		return $query->row();
 	}
+
+	public function add_new_espectaculo($espectaculo_data) {
+		$this->db->insert('espectaculos', $espectaculo_data);
+	}
 }
