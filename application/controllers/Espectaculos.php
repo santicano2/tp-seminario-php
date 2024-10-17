@@ -9,14 +9,10 @@ class Espectaculos extends CI_Controller {
 
 	public function index() {
 
-		$innerViewData = [
-			'espectaculos' => $this->espectaculo_model->get_all_espectaculos()
-		];
-
 		$mainData = [
 			'title' => 'Lista de espectáculos',
 			'innerViewPath' => 'espectaculos/index',
-			'innerViewData' => $innerViewData
+			'espectaculos' => $this->espectaculo_model->get_all_espectaculos()
 		];
 
 		$this->load->view('layouts/main', $mainData);
