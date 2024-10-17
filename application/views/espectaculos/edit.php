@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <h1 class="text-white my-5"><?php echo $title; ?></h1>
 <form action="<?php echo base_url('espectaculos/update/') . $espectaculo->id; ?>" method="POST" class="text-light bg-dark rounded-4 border border-light p-4">
   <div class="mb-3">
