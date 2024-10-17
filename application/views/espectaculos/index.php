@@ -20,7 +20,10 @@
 						<td><?php echo '$' , $espectaculo->price; ?></td>
 						<td>
 							<a href="<?php echo base_url("espectaculos/show/") . $espectaculo->id; ?>">Ver</a>
-							| Editar | Borrar
+							|
+							<a href="<?php echo base_url("espectaculos/edit/") . $espectaculo->id; ?>">Editar</a>
+							|
+							Borrar
 						</td>
 					</tr>
 				<?php endforeach; ?>

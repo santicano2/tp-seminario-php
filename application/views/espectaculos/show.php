@@ -15,7 +15,9 @@
 				<td><?php echo $espectaculo->id; ?></td>
 				<td><?php echo $espectaculo->name; ?></td>
 				<td><?php echo '$' . $espectaculo->price; ?></td>
-				<td>Editar | Borrar</td>
+				<td>
+				<a href="<?php echo base_url("espectaculos/edit/") . $espectaculo->id; ?>">Editar</a>	
+				| Borrar</td>
 			</tr>
 		</tbody>
 	</table>

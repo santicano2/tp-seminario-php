@@ -20,4 +20,8 @@ class Espectaculo_model extends CI_Model {
 	public function add_new_espectaculo($espectaculo_data) {
 		$this->db->insert('espectaculos', $espectaculo_data);
 	}
+
+	public function update_espectaculo_by_id($id, $espectaculo_data) {
+		$this->db->update('espectaculos', $espectaculo_data, ['id' => $id]);
+	}
 }

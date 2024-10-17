@@ -53,11 +53,29 @@ class Espectaculos extends CI_Controller {
 	}
 
 	public function edit($id) {
-		echo "Ruta espectaculos/edit/$id";
+		$espectaulo = $this->espectaculo_model->get_espectaculo_by_id($id);
+
+		if ($espectaulo == null) {
+			show_404();
+		}
+
+		$main_data = [
+			'title' => 'Editar espectáculo #' . $id,
+			'innerViewPath' => 'espectaculos/edit',
+			'espectaculo' => $espectaulo
+		];
+
+		$this->load->view('layouts/main', $main_data);
 	}
 
-	public function update($id, $newData) {
+	public function update($id) {
+		$espectaculo_data = [
+			'name' => $this->input->post('name'),
+			'price' => $this->input->post('price')
+		];
 
+		$this->espectaculo_model->update_espectaculo_by_id($id, $espectaculo_data);
+		redirect('espectaculos');
 	}
 
 	public function delete($id) {
