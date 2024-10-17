@@ -8,8 +8,7 @@
 			data-bs-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent"
 			aria-expanded="false"
-			aria-label="Toggle navigation"
-		>
+			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -20,8 +19,7 @@
 						href="#"
 						role="button"
 						data-bs-toggle="dropdown"
-						aria-expanded="false"
-					>
+						aria-expanded="false">
 						Espectáculos
 					</a>
 					<ul class="dropdown-menu">
@@ -39,8 +37,7 @@
 						href="#"
 						role="button"
 						data-bs-toggle="dropdown"
-						aria-expanded="false"
-					>
+						aria-expanded="false">
 						Usuario
 					</a>
 					<ul class="dropdown-menu">

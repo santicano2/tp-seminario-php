@@ -1,12 +1,15 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Espectaculos extends CI_Controller {
-	public function __construct() {
+class Espectaculos extends CI_Controller
+{
+	public function __construct()
+	{
 		parent::__construct();
 		$this->load->model('espectaculo_model');
 	}
 
-	public function index() {
+	public function index()
+	{
 
 		$main_data = [
 			'title' => 'Lista de espectáculos',
@@ -17,7 +20,8 @@ class Espectaculos extends CI_Controller {
 		$this->load->view('layouts/main', $main_data);
 	}
 
-	public function show($id) {
+	public function show($id)
+	{
 		$espectaulo = $this->espectaculo_model->get_espectaculo_by_id($id);
 
 		if ($espectaulo == null) {
@@ -33,7 +37,8 @@ class Espectaculos extends CI_Controller {
 		$this->load->view('layouts/main', $main_data);
 	}
 
-	public function create() {
+	public function create()
+	{
 		$main_data = [
 			'title' => 'Agregar espectáculo',
 			'innerViewPath' => 'espectaculos/create',
@@ -42,7 +47,8 @@ class Espectaculos extends CI_Controller {
 		$this->load->view('layouts/main', $main_data);
 	}
 
-	public function store() {
+	public function store()
+	{
 		$espectaculo_data = [
 			'name' => $this->input->post('name'),
 			'price' => $this->input->post('price')
@@ -52,7 +58,8 @@ class Espectaculos extends CI_Controller {
 		redirect('espectaculos');
 	}
 
-	public function edit($id) {
+	public function edit($id)
+	{
 		$espectaulo = $this->espectaculo_model->get_espectaculo_by_id($id);
 
 		if ($espectaulo == null) {
@@ -68,7 +75,8 @@ class Espectaculos extends CI_Controller {
 		$this->load->view('layouts/main', $main_data);
 	}
 
-	public function update($id) {
+	public function update($id)
+	{
 		$espectaculo_data = [
 			'name' => $this->input->post('name'),
 			'price' => $this->input->post('price')
@@ -78,7 +86,8 @@ class Espectaculos extends CI_Controller {
 		redirect('espectaculos');
 	}
 
-	public function delete($id) {
+	public function delete($id)
+	{
 		$this->espectaculo_model->delete_espectaculo_by_id($id);
 		redirect('espectaculos');
 	}

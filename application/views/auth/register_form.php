@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php $errors = $this->session->flashdata('errors'); ?>
 <?php $success = $this->session->flashdata('success'); ?>
 
@@ -19,15 +19,15 @@
   <div class="d-flex justify-content-center p-2">
     <button type="submit" class="btn btn-primary">Registrarse</button>
   </div>
-  <?php if(isset($errors)): ?>
-    <?php foreach($errors as $error): ?>
+  <?php if (isset($errors)): ?>
+    <?php foreach ($errors as $error): ?>
       <div class="alert alert-danger" role="alert">
         <?php echo $error; ?>
       </div>
     <?php endforeach; ?>
   <?php endif; ?>
-  
-  <?php if(isset($success)): ?>
+
+  <?php if (isset($success)): ?>
     <div class="alert alert-success" role="alert">
       <?php echo $success; ?>
     </div>

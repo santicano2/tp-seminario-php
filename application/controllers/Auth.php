@@ -1,13 +1,16 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Auth extends CI_Controller {
-	public function __construct() {
+class Auth extends CI_Controller
+{
+	public function __construct()
+	{
 		parent::__construct();
 		$this->load->model('user_model');
 	}
 
-	public function register_form() {
+	public function register_form()
+	{
 		$main_data = [
 			'title' => 'Lista de espectáculos',
 			'innerViewPath' => 'auth/register_form',
@@ -16,7 +19,8 @@ class Auth extends CI_Controller {
 		$this->load->view('layouts/main', $main_data);
 	}
 
-	public function register() {
+	public function register()
+	{
 		$this->form_validation->set_rules('email', 'EMAIL', 'required|valid_email');
 		$this->form_validation->set_rules('password', 'CONTRASEÑA', 'required|min_length[4]|max_length[32]');
 		$this->form_validation->set_rules('confirm-password', 'CONFIRMAR CONTRASEÑA', 'required|matches[password]');
@@ -26,7 +30,7 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_message('max_length', 'El campo %s debe tener menos de %s caracteres');
 		$this->form_validation->set_message('matches', 'Las contraseñas no coinciden');
 
-		if($this->form_validation->run() == false) {
+		if ($this->form_validation->run() == false) {
 			$this->session->set_flashdata('errors', $this->form_validation->error_array());
 			redirect('auth/register_form');
 		}
