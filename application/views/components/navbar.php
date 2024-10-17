@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#">Mi proyecto</a>
+		<a class="navbar-brand" href="<?php echo base_url('espectaculos'); ?>">Tickets</a>
 		<button
 			class="navbar-toggler"
 			type="button"
@@ -22,11 +22,11 @@
 						data-bs-toggle="dropdown"
 						aria-expanded="false"
 					>
-						Productos
+						Espectáculos
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-							<a class="dropdown-item" href="#">Lista de productos</a>
+							<a class="dropdown-item" href="<?php echo base_url('espectaculos'); ?>">Lista de espectáculos</a>
 						</li>
 					</ul>
 				</li>

@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Espectaculos extends CI_Controller {
 	public function __construct() {
@@ -19,7 +18,19 @@ class Espectaculos extends CI_Controller {
 	}
 
 	public function show($id) {
-		echo "Ruta espectaculos/show/$id";
+		$espectaulo = $this->espectaculo_model->get_espectaculo_by_id($id);
+
+		if ($espectaulo == null) {
+			show_404();
+		}
+
+		$mainData = [
+			'title' => 'Espectáculo #' . $id,
+			'innerViewPath' => 'espectaculos/show',
+			'espectaculo' => $espectaulo
+		];
+
+		$this->load->view('layouts/main', $mainData);
 	}
 
 	public function create() {

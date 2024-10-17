@@ -11,4 +11,9 @@ class Espectaculo_model extends CI_Model {
 		$query = $this->db->get('espectaculos');
 		return $query->result();
 	}
+
+	public function get_espectaculo_by_id($id) {
+		$query = $this->db->get_where('espectaculos', ['id' => $id]);
+		return $query->row();
+	}
 }

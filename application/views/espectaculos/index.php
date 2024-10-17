@@ -1,4 +1,5 @@
-<h1 class="text-center text-white my-5">Lista de espectáculos</h1>
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<h1 class="text-center text-white my-5"><?php echo $title; ?></h1>
 <div class="table-responsive px-5">
 	<table class="table table-bordered table-dark table-striped">
 		<thead>
@@ -17,7 +18,10 @@
 						<th scope="row"><?php echo $espectaculo->id; ?></th>
 						<td><?php echo $espectaculo->name; ?></td>
 						<td><?php echo '$' , $espectaculo->price; ?></td>
-						<td>Ver | Editar | Borrar</td>
+						<td>
+							<a href="<?php echo base_url("espectaculos/show/") . $espectaculo->id; ?>">Ver</a>
+							| Editar | Borrar
+						</td>
 					</tr>
 				<?php endforeach; ?>
 			<?php else: ?>
