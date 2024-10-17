@@ -79,6 +79,7 @@ class Espectaculos extends CI_Controller {
 	}
 
 	public function delete($id) {
-
+		$this->espectaculo_model->delete_espectaculo_by_id($id);
+		redirect('espectaculos');
 	}
 }

@@ -24,4 +24,8 @@ class Espectaculo_model extends CI_Model {
 	public function update_espectaculo_by_id($id, $espectaculo_data) {
 		$this->db->update('espectaculos', $espectaculo_data, ['id' => $id]);
 	}
+
+	public function delete_espectaculo_by_id($id) {
+		$this->db->delete('espectaculos', ['id' => $id]);
+	}
 }

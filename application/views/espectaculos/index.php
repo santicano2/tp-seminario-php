@@ -19,11 +19,13 @@
 						<td><?php echo $espectaculo->name; ?></td>
 						<td><?php echo '$' , $espectaculo->price; ?></td>
 						<td>
-							<a href="<?php echo base_url("espectaculos/show/") . $espectaculo->id; ?>">Ver</a>
-							|
-							<a href="<?php echo base_url("espectaculos/edit/") . $espectaculo->id; ?>">Editar</a>
-							|
-							Borrar
+							<div class="d-flex">
+								<a class="btn btn-primary me-2" href="<?php echo base_url("espectaculos/show/") . $espectaculo->id; ?>">Ver</a>
+								<a class="btn btn-warning me-2" href="<?php echo base_url("espectaculos/edit/") . $espectaculo->id; ?>">Editar</a>
+								<form action="<?php echo base_url('espectaculos/delete/') . $espectaculo->id; ?>" method="post">
+									<button class="btn btn-danger" type="submit">Borrar</button>
+								</form>
+							</div>
 						</td>
 					</tr>
 				<?php endforeach; ?>
