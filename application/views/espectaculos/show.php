@@ -3,9 +3,10 @@
 <div class="table-responsive px-5">
 	<table class="table table-bordered table-dark table-striped">
 		<thead>
-			<tr>
+			<tr class="table-warning fs-5">
 				<th scope="col">#</th>
 				<th scope="col">Nombre</th>
+				<th scope="col">Tickets</th>
 				<th scope="col">Precio</th>
 				<th scope="col">Acciones</th>
 			</tr>
@@ -14,6 +15,7 @@
 			<tr>
 				<td><?php echo $espectaculo->id; ?></td>
 				<td><?php echo $espectaculo->name; ?></td>
+				<td><?php echo $espectaculo->tickets; ?></td>
 				<td><?php echo '$' . $espectaculo->price; ?></td>
 				<td>
 					<div class="d-flex">

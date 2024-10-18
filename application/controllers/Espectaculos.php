@@ -51,6 +51,7 @@ class Espectaculos extends CI_Controller
 	{
 		$espectaculo_data = [
 			'name' => $this->input->post('name'),
+			'tickets' => $this->input->post('tickets'),
 			'price' => $this->input->post('price')
 		];
 
@@ -79,6 +80,7 @@ class Espectaculos extends CI_Controller
 	{
 		$espectaculo_data = [
 			'name' => $this->input->post('name'),
+			'tickets' => $this->input->post('tickets'),
 			'price' => $this->input->post('price')
 		];
 

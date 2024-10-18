@@ -6,10 +6,14 @@
     <input type="text" class="form-control bg-white text-dark border" id="name" name="name" value="<?php echo $espectaculo->name; ?>" placeholder="Ingrese el nombre">
   </div>
   <div class="mb-3">
+    <label for="tickets" class="form-label">Tickets:</label>
+    <input type="number" class="form-control bg-white text-dark border" id="tickets" name="tickets" value="<?php echo $espectaculo->tickets; ?>" placeholder="Ingrese el numero de tickets">
+  </div>
+  <div class="mb-3">
     <label for="price" class="form-label">Precio:</label>
     <input type="number" class="form-control bg-white text-dark border" id="price" name="price" value="<?php echo $espectaculo->price; ?>" placeholder="Ingrese el precio">
   </div>
   <div class="d-flex justify-content-center p-2">
-    <button type="submit" class="btn btn-primary">Actualizar producto</button>
+    <button type="submit" class="btn btn-primary">Actualizar espectáculo</button>
   </div>
 </form>

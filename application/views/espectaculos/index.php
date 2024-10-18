@@ -6,6 +6,7 @@
 			<tr class="table-warning fs-5">
 				<th scope="col">#</th>
 				<th scope="col">Nombre</th>
+				<th scope="col">Tickets</th>
 				<th scope="col">Precio</th>
 				<th scope="col">Acciones</th>
 			</tr>
@@ -17,6 +18,7 @@
 					<tr>
 						<th scope="row"><?php echo $espectaculo->id; ?></th>
 						<td><?php echo $espectaculo->name; ?></td>
+						<td><?php echo $espectaculo->tickets; ?></td>
 						<td><?php echo '$', $espectaculo->price; ?></td>
 						<td>
 							<div class="d-flex">
