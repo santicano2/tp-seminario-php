@@ -109,8 +109,8 @@ class Espectaculos extends CI_Controller
 
 			$this->espectaculo_model->update_espectaculo_by_id($id, $espectaculo_data);
 
-			$this->session->set_flashdata('success', 'Compra realizada exitosamente');
-			redirect('espectaculos');
+			$this->session->set_flashdata('success', 'Compra realizada exitosamente, redirigiendo ...');
+			redirect('espectaculos/show/' . $id);
 		} else {
 			$this->session->set_flashdata('error', 'No hay suficientes tickets disponibles');
 			redirect('espectaculos/show/' . $id);

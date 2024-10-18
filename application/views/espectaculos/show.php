@@ -24,3 +24,11 @@
 </div>
 
 <?php $this->load->view('components/buy_form') ?>
+
+<?php if ($this->session->flashdata('success')): ?>
+	<script>
+		setTimeout(function() {
+			window.location.href = "<?php echo base_url('espectaculos'); ?>";
+		}, 3000);
+	</script>
+<?php endif; ?>
