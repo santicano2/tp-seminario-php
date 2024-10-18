@@ -9,6 +9,12 @@ class User_model extends CI_Model
 		$this->load->database();
 	}
 
+	public function get_all_usuarios()
+	{
+		$query = $this->db->get('users');
+		return $query->result();
+	}
+
 	public function get_user_by_email($email)
 	{
 		$query = $this->db->get_where('users', ['email' => $email]);

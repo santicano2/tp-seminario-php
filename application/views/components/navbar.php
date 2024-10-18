@@ -38,6 +38,21 @@
 						role="button"
 						data-bs-toggle="dropdown"
 						aria-expanded="false">
+						Usuarios
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="dropdown-item" href="<?php echo base_url('usuarios'); ?>">Lista de usuarios</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						href="#"
+						role="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false">
 						<?php if ($this->session->userdata('logged_in')): ?>
 							<?php echo $this->session->userdata('name'); ?>
 						<?php else: ?>

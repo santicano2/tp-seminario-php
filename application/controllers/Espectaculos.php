@@ -29,7 +29,7 @@ class Espectaculos extends CI_Controller
 		}
 
 		$main_data = [
-			'title' => 'Espectáculo #' . $id,
+			'title' => $espectaulo->name,
 			'innerViewPath' => 'espectaculos/show',
 			'espectaculo' => $espectaulo
 		];
@@ -92,5 +92,28 @@ class Espectaculos extends CI_Controller
 	{
 		$this->espectaculo_model->delete_espectaculo_by_id($id);
 		redirect('espectaculos');
+	}
+
+	public function comprar($id)
+	{
+		$espectaculo = $this->espectaculo_model->get_espectaculo_by_id($id);
+
+		$cantidad = $this->input->post('tickets');
+
+		if ($espectaculo->tickets >= $cantidad) {
+			$nuevos_tickets = $espectaculo->tickets - $cantidad;
+
+			$espectaculo_data = [
+				'tickets' => $nuevos_tickets
+			];
+
+			$this->espectaculo_model->update_espectaculo_by_id($id, $espectaculo_data);
+
+			$this->session->set_flashdata('success', 'Compra realizada exitosamente');
+			redirect('espectaculos');
+		} else {
+			$this->session->set_flashdata('error', 'No hay suficientes tickets disponibles');
+			redirect('espectaculos/show/' . $id);
+		}
 	}
 }
