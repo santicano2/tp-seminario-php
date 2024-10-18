@@ -38,12 +38,25 @@
 						role="button"
 						data-bs-toggle="dropdown"
 						aria-expanded="false">
-						Usuario
+						<?php if ($this->session->userdata('logged_in')): ?>
+							<?php echo $this->session->userdata('email'); ?>
+						<?php else: ?>
+							Usuario
+						<?php endif; ?>
 					</a>
 					<ul class="dropdown-menu">
-						<li>
-							<a class="dropdown-item" href="<?php echo base_url('auth/register_form'); ?>">Registrarse</a>
-						</li>
+						<?php if ($this->session->userdata('logged_in')): ?>
+							<li>
+								<a class="dropdown-item" href="<?php echo base_url('auth/logout'); ?>">Cerrar sesión</a>
+							</li>
+						<?php else: ?>
+							<li>
+								<a class="dropdown-item" href="<?php echo base_url('auth/login_form'); ?>">Iniciar sesión</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="<?php echo base_url('auth/register_form'); ?>">Registrarse</a>
+							</li>
+						<?php endif; ?>
 					</ul>
 				</li>
 			</ul>

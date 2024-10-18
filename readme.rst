@@ -17,5 +17,4 @@ Stack
 TODO:
 **************************
 
-- Usar iconos en lugar de botones para el CRUD.
-- LOGIN
+- Agregar username a la tabla creacion de usuario, cambiar email en navbar por username
