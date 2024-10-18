@@ -17,6 +17,6 @@ Stack
 TODO:
 **************************
 
-- Si no hay tickets, que no aparezca el boton de comprar, cuando haya pocas entradas colocar una alerta de pocas
+- Añadir imagenes a las peliculas, imagenes en general por la pagina.
 - En la compra exitosa mandar a una vista nueva de compra exitosa
 - Añadir roles, solo admin hace CRUD.
