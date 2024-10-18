@@ -12,7 +12,7 @@ class Auth extends CI_Controller
 	public function register_form()
 	{
 		$main_data = [
-			'title' => 'Lista de espectáculos',
+			'title' => 'Registrar usuario',
 			'innerViewPath' => 'auth/register_form',
 		];
 
