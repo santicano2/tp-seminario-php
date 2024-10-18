@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-info bg-opacity-25" data-bs-theme="dark">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="<?php echo base_url('espectaculos'); ?>">Tickets</a>
+		<a class="navbar-brand" href="<?php echo base_url('home'); ?>">Cine Monte Grande</a>
 		<button
 			class="navbar-toggler"
 			type="button"

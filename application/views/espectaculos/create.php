@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<h1 class="text-white my-5"><?php echo $title; ?></h1>
+<h1 class="text-white my-3"><?php echo $title; ?></h1>
 <form action="<?php echo base_url('espectaculos/store'); ?>" method="POST" class="text-light bg-dark rounded-0 border border-2 border-primary p-5">
   <div class="mb-3">
     <label for="name" class="form-label">Nombre:</label>

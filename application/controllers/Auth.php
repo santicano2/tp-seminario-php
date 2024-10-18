@@ -10,6 +10,14 @@ class Auth extends CI_Controller
 		$this->load->model('user_model');
 	}
 
+	public function index()
+	{
+		if ($this->session->userdata('logged_in')) {
+			redirect('home');
+		}
+		redirect('auth/login_form');
+	}
+
 	public function register_form()
 	{
 		$main_data = [

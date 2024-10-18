@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<h1 class="text-center text-white my-5"><?php echo $title; ?></h1>
+<h1 class="text-center text-white my-4"><?php echo $title; ?></h1>
 <div class="table-responsive px-5">
 	<table class="table table-bordered table-dark table-striped">
 		<thead>
