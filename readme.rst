@@ -17,5 +17,6 @@ Stack
 TODO:
 **************************
 
-- Añadir opcion de compra, cantidad de tickets disponibles para cada función de cine.
+- Si no hay tickets, que no aparezca el boton de comprar, cuando haya pocas entradas colocar una alerta de pocas
+- En la compra exitosa mandar a una vista nueva de compra exitosa
 - Añadir roles, solo admin hace CRUD.
