@@ -7,7 +7,7 @@
 	<input type="hidden" name="espectaculo" id="espectaculo" value="<?php echo $espectaculo->id; ?>">
 	<div class="form-group mb-3">
 		<label for="cantidad">Cantidad:</label>
-		<input type="number" name="cantidad" id="cantidad" min="1" max="<?php echo $espectaculo->tickets; ?>" class="form-control mt-1">
+		<input type="number" name="tickets" id="tickets" min="1" max="<?php echo $espectaculo->tickets; ?>" class="form-control mt-1">
 	</div>
 	<button type="submit" class="btn btn-success">Comprar</button>
 </form>
