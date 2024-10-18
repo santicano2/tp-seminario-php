@@ -23,6 +23,7 @@ class Auth extends CI_Controller
 	public function register()
 	{
 		$this->form_validation->set_rules('email', 'EMAIL', 'required|valid_email');
+		$this->form_validation->set_rules('name', 'NOMBRE', 'required|min_length[4]|max_length[32]');
 		$this->form_validation->set_rules('password', 'CONTRASEÑA', 'required|min_length[4]|max_length[32]');
 		$this->form_validation->set_rules('confirm-password', 'CONFIRMAR CONTRASEÑA', 'required|matches[password]');
 
@@ -38,6 +39,7 @@ class Auth extends CI_Controller
 
 		$user_data = [
 			'email' => $this->input->post('email'),
+			'name' => $this->input->post('name'),
 			'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 			'role' => 'customer',
 		];
@@ -80,6 +82,7 @@ class Auth extends CI_Controller
 		if ($user && password_verify($password, $user->password)) {
 			$this->session->set_userdata('logged_in', $user->id);
 			$this->session->set_userdata('email', $user->email);
+			$this->session->set_userdata('name', $user->name);
 			redirect('espectaculos');
 		} else {
 			$this->session->set_flashdata('errors', ['Credenciales incorrectas']);

@@ -39,7 +39,7 @@
 						data-bs-toggle="dropdown"
 						aria-expanded="false">
 						<?php if ($this->session->userdata('logged_in')): ?>
-							<?php echo $this->session->userdata('email'); ?>
+							<?php echo $this->session->userdata('name'); ?>
 						<?php else: ?>
 							Usuario
 						<?php endif; ?>

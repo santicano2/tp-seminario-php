@@ -2,11 +2,15 @@
 <?php $errors = $this->session->flashdata('errors'); ?>
 <?php $success = $this->session->flashdata('success'); ?>
 
-<h1 class="text-white my-5"><?php echo $title; ?></h1>
+<h1 class="text-white my-3"><?php echo $title; ?></h1>
 <form action="<?php echo base_url('auth/register'); ?>" method="POST" class="text-light bg-dark rounded-0 border border-2 border-primary p-4">
   <div class="mb-3">
     <label for="email" class="form-label">Email:</label>
     <input type="email" class="form-control bg-white text-dark border" id="email" name="email" placeholder="Ingrese su email">
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre:</label>
+    <input type="text" class="form-control bg-white text-dark border" id="name" name="name" placeholder="Ingrese su nombre">
   </div>
   <div class="mb-3">
     <label for="password" class="form-label">Contraseña:</label>

@@ -17,4 +17,5 @@ Stack
 TODO:
 **************************
 
-- Agregar username a la tabla creacion de usuario, cambiar email en navbar por username
+- Añadir opcion de compra, cantidad de tickets disponibles para cada función de cine.
+- Añadir roles, solo admin hace CRUD.
