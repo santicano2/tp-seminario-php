@@ -18,5 +18,5 @@ TODO:
 **************************
 
 - Añadir imagenes a las peliculas, imagenes en general por la pagina.
-- Añadir roles, solo admin hace CRUD.
+- Agregar datos a la hora de comprar
 - Personalizar 404
