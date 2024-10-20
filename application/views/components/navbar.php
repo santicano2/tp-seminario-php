@@ -26,26 +26,30 @@
 						<li>
 							<a class="dropdown-item" href="<?php echo base_url('espectaculos'); ?>">Lista de espectáculos</a>
 						</li>
-						<li>
-							<a class="dropdown-item" href="<?php echo base_url('/espectaculos/create'); ?>">Agregar espectáculo</a>
-						</li>
+						<?php if ($this->session->userdata('role') == 'admin'): ?>
+							<li>
+								<a class="dropdown-item" href="<?php echo base_url('/espectaculos/create'); ?>">Agregar espectáculo</a>
+							</li>
+						<?php endif; ?>
 					</ul>
 				</li>
-				<li class="nav-item dropdown">
-					<a
-						class="nav-link dropdown-toggle"
-						href="#"
-						role="button"
-						data-bs-toggle="dropdown"
-						aria-expanded="false">
-						Usuarios
-					</a>
-					<ul class="dropdown-menu">
-						<li>
-							<a class="dropdown-item" href="<?php echo base_url('usuarios'); ?>">Lista de usuarios</a>
-						</li>
-					</ul>
-				</li>
+				<?php if ($this->session->userdata('role') == 'admin'): ?>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							role="button"
+							data-bs-toggle="dropdown"
+							aria-expanded="false">
+							Usuarios
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="dropdown-item" href="<?php echo base_url('usuarios'); ?>">Lista de usuarios</a>
+							</li>
+						</ul>
+					</li>
+				<?php endif; ?>
 				<li class="nav-item dropdown">
 					<a
 						class="nav-link dropdown-toggle"

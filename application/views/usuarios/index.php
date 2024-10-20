@@ -17,6 +17,7 @@
 						<th scope="row"><?php echo $usuario->id; ?></th>
 						<td><?php echo $usuario->name; ?></td>
 						<td><?php echo $usuario->email; ?></td>
+						<td><?php echo $usuario->role; ?></td>
 					</tr>
 				<?php endforeach; ?>
 			<?php else: ?>
