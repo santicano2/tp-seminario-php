@@ -56,7 +56,7 @@
 						<?php if ($this->session->userdata('logged_in')): ?>
 							<?php echo $this->session->userdata('name'); ?>
 						<?php else: ?>
-							Usuario
+							Mi cuenta
 						<?php endif; ?>
 					</a>
 					<ul class="dropdown-menu">

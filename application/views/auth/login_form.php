@@ -12,8 +12,9 @@
     <input type="password" class="form-control bg-white text-dark border" id="password" name="password" placeholder="Ingrese una contraseña">
   </div>
   <div class="d-flex justify-content-center p-2">
-    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+    <button type="submit" class="btn btn-success">Iniciar sesión</button>
   </div>
+  <a href="<?php echo base_url('auth/register_form'); ?>" class="text-decoration-underline">¿No tiene una cuenta? Regístrese</a>
   <?php if (isset($errors)): ?>
     <?php foreach ($errors as $error): ?>
       <div class="alert alert-danger" role="alert">

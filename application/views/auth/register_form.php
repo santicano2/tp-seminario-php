@@ -23,6 +23,7 @@
   <div class="d-flex justify-content-center p-2">
     <button type="submit" class="btn btn-primary">Registrarse</button>
   </div>
+  <a href="<?php echo base_url('auth/login_form'); ?>" class="text-decoration-underline">¿Ya tenes una cuenta? Iniciar sesión</a>
   <?php if (isset($errors)): ?>
     <?php foreach ($errors as $error): ?>
       <div class="alert alert-danger" role="alert">
