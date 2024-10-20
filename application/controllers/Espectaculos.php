@@ -49,6 +49,20 @@ class Espectaculos extends CI_Controller
 
 	public function store()
 	{
+		$this->form_validation->set_rules('name', 'NOMBRE', 'required');
+		$this->form_validation->set_rules('tickets', 'TICKETS', 'required|integer|greater_than_equal_to[10]|less_than_equal_to[80]');
+		$this->form_validation->set_rules('price', 'PRECIO', 'required|integer|greater_than_equal_to[6000]|less_than_equal_to[10000]');
+
+		$this->form_validation->set_message('required', 'El campo %s es obligatorio');
+		$this->form_validation->set_message('integer', 'El campo %s debe ser un numero entero');
+		$this->form_validation->set_message('greater_than_equal_to', 'El campo %s debe ser mayor o igual a %s');
+		$this->form_validation->set_message('less_than_equal_to', 'El campo %s debe ser menor o igual a %s');
+
+		if ($this->form_validation->run() == false) {
+			$this->session->set_flashdata('errors', $this->form_validation->error_array());
+			redirect('espectaculos/create');
+		}
+
 		$espectaculo_data = [
 			'name' => $this->input->post('name'),
 			'tickets' => $this->input->post('tickets'),
