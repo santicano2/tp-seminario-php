@@ -20,6 +20,10 @@ class Auth extends CI_Controller
 
 	public function register_form()
 	{
+		if ($this->session->userdata('logged_in')) {
+			redirect('home');
+		}
+
 		$main_data = [
 			'title' => 'Registrar usuario',
 			'innerViewPath' => 'auth/register_form',
@@ -60,6 +64,10 @@ class Auth extends CI_Controller
 
 	public function login_form()
 	{
+		if ($this->session->userdata('logged_in')) {
+			redirect('home');
+		}
+
 		$main_data = [
 			'title' => 'Iniciar sesión',
 			'innerViewPath' => 'auth/login_form',
@@ -88,9 +96,10 @@ class Auth extends CI_Controller
 		$user = $this->user_model->get_user_by_email($email);
 
 		if ($user && password_verify($password, $user->password)) {
-			$this->session->set_userdata('logged_in', $user->id);
+			$this->session->set_userdata('logged_in', true);
 			$this->session->set_userdata('email', $user->email);
 			$this->session->set_userdata('name', $user->name);
+			$this->session->set_userdata('role', $user->role);
 			redirect('espectaculos');
 		} else {
 			$this->session->set_flashdata('errors', ['Credenciales incorrectas']);
