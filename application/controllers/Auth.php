@@ -34,6 +34,10 @@ class Auth extends CI_Controller
 
 	public function register()
 	{
+		if ($this->session->userdata('logged_in')) {
+			redirect('home');
+		}
+
 		$this->form_validation->set_rules('email', 'EMAIL', 'required|valid_email');
 		$this->form_validation->set_rules('name', 'NOMBRE', 'required|min_length[4]|max_length[32]');
 		$this->form_validation->set_rules('password', 'CONTRASEÑA', 'required|min_length[4]|max_length[32]');
@@ -78,6 +82,10 @@ class Auth extends CI_Controller
 
 	public function login()
 	{
+		if ($this->session->userdata('logged_in')) {
+			redirect('home');
+		}
+
 		$this->form_validation->set_rules('email', 'EMAIL', 'required|valid_email');
 		$this->form_validation->set_rules('password', 'CONTRASEÑA', 'required|min_length[4]|max_length[32]');
 
@@ -109,8 +117,7 @@ class Auth extends CI_Controller
 
 	public function logout()
 	{
-		$this->session->unset_userdata('logged_in');
-		$this->session->unset_userdata('email');
+		$this->session->sess_destroy();
 		redirect('auth/login_form');
 	}
 }

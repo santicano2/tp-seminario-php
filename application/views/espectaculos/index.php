@@ -21,18 +21,20 @@
 						<td><?php echo $espectaculo->tickets; ?></td>
 						<td><?php echo '$', $espectaculo->price; ?></td>
 						<td>
-							<div class="d-flex">
+							<div class="d-flex justify-content-center">
 								<a class="btn btn-primary me-2" href="<?php echo base_url("espectaculos/show/") . $espectaculo->id; ?>">
 									<i class="fa-regular fa-eye"></i>
 								</a>
-								<a class="btn btn-warning me-2" href="<?php echo base_url("espectaculos/edit/") . $espectaculo->id; ?>">
-									<i class="fa-regular fa-pen-to-square"></i>
-								</a>
-								<form action="<?php echo base_url('espectaculos/delete/') . $espectaculo->id; ?>" method="post">
-									<button class="btn btn-danger" type="submit">
-										<i class="fa-solid fa-trash"></i>
-									</button>
-								</form>
+								<?php if ($this->session->userdata('role') == 'admin'): ?>
+									<a class="btn btn-warning me-2" href="<?php echo base_url("espectaculos/edit/") . $espectaculo->id; ?>">
+										<i class="fa-regular fa-pen-to-square"></i>
+									</a>
+									<form action="<?php echo base_url('espectaculos/delete/') . $espectaculo->id; ?>" method="post">
+										<button class="btn btn-danger" type="submit">
+											<i class="fa-solid fa-trash"></i>
+										</button>
+									</form>
+								<?php endif; ?>
 							</div>
 						</td>
 					</tr>

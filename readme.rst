@@ -19,3 +19,4 @@ TODO:
 
 - Añadir imagenes a las peliculas, imagenes en general por la pagina.
 - Añadir roles, solo admin hace CRUD.
+- Personalizar 404

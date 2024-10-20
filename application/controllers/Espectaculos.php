@@ -39,6 +39,10 @@ class Espectaculos extends CI_Controller
 
 	public function create()
 	{
+		if ($this->session->userdata('role') != 'admin') {
+			show_error('No estas autorizado para realizar esta accion');
+		}
+
 		$main_data = [
 			'title' => 'Agregar espectáculo',
 			'innerViewPath' => 'espectaculos/create',
@@ -49,6 +53,10 @@ class Espectaculos extends CI_Controller
 
 	public function store()
 	{
+		if ($this->session->userdata('role') != 'admin') {
+			show_error('No estas autorizado para realizar esta accion');
+		}
+
 		$this->form_validation->set_rules('name', 'NOMBRE', 'required');
 		$this->form_validation->set_rules('tickets', 'TICKETS', 'required|integer|greater_than_equal_to[10]|less_than_equal_to[80]');
 		$this->form_validation->set_rules('price', 'PRECIO', 'required|integer|greater_than_equal_to[6000]|less_than_equal_to[10000]');
@@ -75,6 +83,10 @@ class Espectaculos extends CI_Controller
 
 	public function edit($id)
 	{
+		if ($this->session->userdata('role') != 'admin') {
+			show_error('No estas autorizado para realizar esta accion');
+		}
+
 		$espectaulo = $this->espectaculo_model->get_espectaculo_by_id($id);
 
 		if ($espectaulo == null) {
@@ -92,6 +104,10 @@ class Espectaculos extends CI_Controller
 
 	public function update($id)
 	{
+		if ($this->session->userdata('role') != 'admin') {
+			show_error('No estas autorizado para realizar esta accion');
+		}
+
 		$this->form_validation->set_rules('name', 'NOMBRE', 'required');
 		$this->form_validation->set_rules('tickets', 'TICKETS', 'required|integer|greater_than_equal_to[10]|less_than_equal_to[80]');
 		$this->form_validation->set_rules('price', 'PRECIO', 'required|integer|greater_than_equal_to[6000]|less_than_equal_to[10000]');
@@ -118,6 +134,10 @@ class Espectaculos extends CI_Controller
 
 	public function delete($id)
 	{
+		if ($this->session->userdata('role') != 'admin') {
+			show_error('No estas autorizado para realizar esta accion');
+		}
+
 		$this->espectaculo_model->delete_espectaculo_by_id($id);
 		redirect('espectaculos');
 	}
