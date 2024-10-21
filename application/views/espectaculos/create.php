@@ -13,12 +13,10 @@
     <label for="price" class="form-label">Precio:</label>
     <input type="number" class="form-control bg-white text-dark border" id="price" name="price" placeholder="Ingrese el precio" min="6000" max="10000" required>
   </div>
-  <!--
   <div class="mb-3">
     <label for="image" class="form-label">Imagen:</label>
     <input type="file" class="form-control bg-white text-dark border" id="txtimage" name="txtimage">
   </div>
-  -->
   <div class="d-flex justify-content-center p-2">
     <button type="submit" class="btn btn-primary">Crear espectáculo</button>
   </div>

@@ -66,19 +66,52 @@ class Espectaculos extends CI_Controller
 		$this->form_validation->set_message('greater_than_equal_to', 'El campo %s debe ser mayor o igual a %s');
 		$this->form_validation->set_message('less_than_equal_to', 'El campo %s debe ser menor o igual a %s');
 
-		if ($this->form_validation->run() == false) {
-			$this->session->set_flashdata('errors', $this->form_validation->error_array());
-			redirect('espectaculos/create');
+		$txtimage = 'no_image.png';
+
+		if (empty($_FILES['txtimage']['name'])) {
+			if ($this->form_validation->run() == false) {
+				$this->session->set_flashdata('errors', $this->form_validation->error_array());
+				redirect('espectaculos/create');
+			}
+
+			$espectaculo_data = [
+				'name' => $this->input->post('name'),
+				'tickets' => $this->input->post('tickets'),
+				'price' => $this->input->post('price'),
+				'image' => $txtimage
+			];
+
+			$this->espectaculo_model->add_new_espectaculo($espectaculo_data);
+			redirect('espectaculos');
+		} else {
+			$config = [
+				'upload_path' => './assets/img/uploads/',
+				'allowed_types' => 'gif|jpg|png',
+			];
+
+			$this->upload->initialize($config);
+
+			if ($this->upload->do_upload('txtimage')) {
+				$photo = $this->upload->data('file_name');
+
+				if ($this->form_validation->run() == false) {
+					$this->session->set_flashdata('errors', $this->form_validation->error_array());
+					redirect('espectaculos/create');
+				}
+
+				$espectaculo_data = [
+					'name' => $this->input->post('name'),
+					'tickets' => $this->input->post('tickets'),
+					'price' => $this->input->post('price'),
+					'image' => $photo
+				];
+
+				$this->espectaculo_model->add_new_espectaculo($espectaculo_data);
+				redirect('espectaculos');
+			} else {
+				echo $this->upload->display_errors();
+			}
 		}
-
-		$espectaculo_data = [
-			'name' => $this->input->post('name'),
-			'tickets' => $this->input->post('tickets'),
-			'price' => $this->input->post('price')
-		];
-
-		$this->espectaculo_model->add_new_espectaculo($espectaculo_data);
-		redirect('espectaculos');
 	}
 
 	public function edit($id)
