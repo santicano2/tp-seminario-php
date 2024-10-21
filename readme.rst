@@ -17,7 +17,6 @@ Stack
 TODO:
 **************************
 
-- Fechas para comprar?
 - Carousel
 - Agregar datos a la hora de comprar
 - Personalizar UI, hacerlo mas horizontal
