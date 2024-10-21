@@ -7,9 +7,10 @@
 				<th scope="col">ID</th>
 				<th scope="col">Email del Comprador</th>
 				<th scope="col">Espectáculo</th>
-				<th scope="col">Fecha</th>
+				<th scope="col">Fecha compra</th>
 				<th scope="col">Cantidad de Tickets</th>
 				<th scope="col">Precio Total</th>
+				<th scope="col">Fecha show</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -23,6 +24,7 @@
 						<td><?php echo $venta->fecha; ?></td>
 						<td><?php echo $venta->cantidad_tickets; ?></td>
 						<td><?php echo "$" . $venta->precio_total; ?></td>
+						<td><?php echo $venta->fecha_show; ?></td>
 					</tr>
 				<?php endforeach; ?>
 			<?php else: ?>

@@ -230,16 +230,18 @@ class Espectaculos extends CI_Controller
 			$pelicula = $espectaculo->name;
 			$cantidad = $this->input->post('tickets');
 			$precio_total = $cantidad * $espectaculo->price;
+			$fecha = $this->input->post('fecha');
 
-			$this->load->model('Venta_model');
+			$this->load->model('venta_model');
 			$venta_data = [
 				'nombre_comprador' => $nombre_comprador,
 				'pelicula' => $pelicula,
 				'cantidad_tickets' => $cantidad,
-				'precio_total' => $precio_total
+				'precio_total' => $precio_total,
+				'fecha_show' => $fecha
 			];
 
-			$this->Venta_model->add_venta($venta_data);
+			$this->venta_model->add_venta($venta_data);
 
 			redirect('espectaculos/show/' . $id);
 		} else {

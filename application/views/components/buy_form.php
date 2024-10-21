@@ -1,6 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php $errors = $this->session->flashdata('errors'); ?>
 <?php $success = $this->session->flashdata('success'); ?>
+<?php
+$hoy = date('Y-m-d');
+
+$fecha_maxima = date('Y-m-d', strtotime('+2 weeks'));
+?>
 
 <?php if ($this->session->userdata('logged_in')): ?>
 	<?php if ($espectaculo->tickets > 0): ?>
@@ -10,6 +15,12 @@
 			<div class="form-group mb-3">
 				<label for="cantidad">Cantidad:</label>
 				<input type="number" name="tickets" id="tickets" min="1" max="<?php echo $espectaculo->tickets; ?>" class="form-control mt-1" oninput="toggleButton()">
+			</div>
+			<div class="form-group mb-3">
+				<label for="fecha">Fecha de la función:</label>
+				<input type="date" name="fecha" id="fecha" class="form-control mt-1" required
+					min="<?php echo $hoy; ?>"
+					max="<?php echo $fecha_maxima; ?>">
 			</div>
 			<button type="submit" class="btn btn-success" id="buyButton" disabled>Comprar</button>
 			<?php if ($espectaculo->tickets < 5): ?>
