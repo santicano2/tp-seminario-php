@@ -17,6 +17,8 @@ Stack
 TODO:
 **************************
 
-- Añadir imagenes a las peliculas, imagenes en general por la pagina.
+- Ver imagenes de las peliculas en la tabla y en show
+- Actualizar imagen
+- Carousel
 - Agregar datos a la hora de comprar
 - Personalizar 404
