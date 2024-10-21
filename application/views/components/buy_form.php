@@ -9,19 +9,14 @@
 			<input type="hidden" name="espectaculo" id="espectaculo" value="<?php echo $espectaculo->id; ?>">
 			<div class="form-group mb-3">
 				<label for="cantidad">Cantidad:</label>
-				<input type="number" name="tickets" id="tickets" min="1" max="<?php echo $espectaculo->tickets; ?>" class="form-control mt-1">
+				<input type="number" name="tickets" id="tickets" min="1" max="<?php echo $espectaculo->tickets; ?>" class="form-control mt-1" oninput="toggleButton()">
 			</div>
-			<button type="submit" class="btn btn-success" <?php echo $disabled ? 'disabled' : ''; ?>>Comprar</button>
+			<button type="submit" class="btn btn-success" id="buyButton" disabled>Comprar</button>
 			<?php if ($espectaculo->tickets < 5): ?>
 				<div class="alert alert-warning mt-3 fw-bold" role="alert">
-					Ultimos tickets
+					Últimos tickets
 				</div>
 			<?php endif; ?>
-		<?php else: ?>
-			<div class="alert alert-danger fw-bold" role="alert">
-				No hay tickets disponibles
-			</div>
-		<?php endif; ?>
 		</form>
 
 		<?php if (isset($errors)): ?>
@@ -39,6 +34,19 @@
 		<?php endif; ?>
 	<?php else: ?>
 		<div class="alert alert-danger fw-bold" role="alert">
-			Para comprar tickets, iniciar sesión.
+			No hay tickets disponibles
 		</div>
 	<?php endif; ?>
+<?php else: ?>
+	<div class="alert alert-danger fw-bold" role="alert">
+		Para comprar tickets, iniciar sesión.
+	</div>
+<?php endif; ?>
+
+<script>
+	function toggleButton() {
+		const ticketInput = document.getElementById('tickets');
+		const buyButton = document.getElementById('buyButton');
+		buyButton.disabled = ticketInput.value < 1 || ticketInput.value > <?php echo $espectaculo->tickets; ?>;
+	}
+</script>

@@ -227,12 +227,14 @@ class Espectaculos extends CI_Controller
 
 			// Registrar venta
 			$nombre_comprador = $this->session->userdata('email');
+			$pelicula = $espectaculo->name;
 			$cantidad = $this->input->post('tickets');
 			$precio_total = $cantidad * $espectaculo->price;
 
 			$this->load->model('Venta_model');
 			$venta_data = [
 				'nombre_comprador' => $nombre_comprador,
+				'pelicula' => $pelicula,
 				'cantidad_tickets' => $cantidad,
 				'precio_total' => $precio_total
 			];

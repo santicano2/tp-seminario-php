@@ -17,8 +17,7 @@ Stack
 TODO:
 **************************
 
-- Añadir columna pelicula a la tabla de ventas
-- Fechas?
+- Fechas para comprar?
 - Carousel
 - Agregar datos a la hora de comprar
 - Personalizar UI, hacerlo mas horizontal

@@ -6,6 +6,7 @@
 			<tr class="table-warning fs-5">
 				<th scope="col">ID</th>
 				<th scope="col">Email del Comprador</th>
+				<th scope="col">Espectáculo</th>
 				<th scope="col">Fecha</th>
 				<th scope="col">Cantidad de Tickets</th>
 				<th scope="col">Precio Total</th>
@@ -18,6 +19,7 @@
 					<tr>
 						<th scope="row"><?php echo $venta->id; ?></th>
 						<td><?php echo $venta->nombre_comprador; ?></td>
+						<td><?php echo $venta->pelicula; ?></td>
 						<td><?php echo $venta->fecha; ?></td>
 						<td><?php echo $venta->cantidad_tickets; ?></td>
 						<td><?php echo "$" . $venta->precio_total; ?></td>
