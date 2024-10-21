@@ -11,7 +11,7 @@
 				<label for="cantidad">Cantidad:</label>
 				<input type="number" name="tickets" id="tickets" min="1" max="<?php echo $espectaculo->tickets; ?>" class="form-control mt-1">
 			</div>
-			<button type="submit" class="btn btn-success">Comprar</button>
+			<button type="submit" class="btn btn-success" <?php echo $disabled ? 'disabled' : ''; ?>>Comprar</button>
 			<?php if ($espectaculo->tickets < 5): ?>
 				<div class="alert alert-warning mt-3 fw-bold" role="alert">
 					Ultimos tickets

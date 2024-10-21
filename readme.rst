@@ -17,8 +17,7 @@ Stack
 TODO:
 **************************
 
-- Actualizar imagen
-- Hacer una lista de ventas realizadas.
+- Añadir columna pelicula a la tabla de ventas
 - Fechas?
 - Carousel
 - Agregar datos a la hora de comprar

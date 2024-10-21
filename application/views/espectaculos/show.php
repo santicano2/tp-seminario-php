@@ -28,7 +28,7 @@
 	<?php endif; ?>
 </div>
 
-<?php $this->load->view('components/buy_form') ?>
+<?php $this->load->view('components/buy_form', ['disabled' => $this->session->flashdata('success')]); ?>
 
 <?php if ($this->session->flashdata('success')): ?>
 	<script>

@@ -50,6 +50,23 @@
 						</ul>
 					</li>
 				<?php endif; ?>
+				<?php if ($this->session->userdata('role') == 'admin'): ?>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							role="button"
+							data-bs-toggle="dropdown"
+							aria-expanded="false">
+							Ventas
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="dropdown-item" href="<?php echo base_url('ventas'); ?>">Lista de ventas</a>
+							</li>
+						</ul>
+					</li>
+				<?php endif; ?>
 				<li class="nav-item dropdown">
 					<a
 						class="nav-link dropdown-toggle"

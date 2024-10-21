@@ -224,6 +224,21 @@ class Espectaculos extends CI_Controller
 			$this->espectaculo_model->update_espectaculo_by_id($id, $espectaculo_data);
 
 			$this->session->set_flashdata('success', 'Compra realizada exitosamente, redirigiendo ...');
+
+			// Registrar venta
+			$nombre_comprador = $this->session->userdata('email');
+			$cantidad = $this->input->post('tickets');
+			$precio_total = $cantidad * $espectaculo->price;
+
+			$this->load->model('Venta_model');
+			$venta_data = [
+				'nombre_comprador' => $nombre_comprador,
+				'cantidad_tickets' => $cantidad,
+				'precio_total' => $precio_total
+			];
+
+			$this->Venta_model->add_venta($venta_data);
+
 			redirect('espectaculos/show/' . $id);
 		} else {
 			$this->session->set_flashdata('error', 'No hay suficientes tickets disponibles');
