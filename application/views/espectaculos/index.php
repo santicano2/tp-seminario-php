@@ -6,6 +6,7 @@
 			<tr class="table-warning fs-5">
 				<th scope="col">#</th>
 				<th scope="col">Nombre</th>
+				<th scope="col">Poster</th>
 				<th scope="col">Tickets</th>
 				<th scope="col">Precio</th>
 				<th scope="col">Acciones</th>
@@ -18,6 +19,9 @@
 					<tr>
 						<th scope="row"><?php echo $espectaculo->id; ?></th>
 						<td><?php echo $espectaculo->name; ?></td>
+						<td>
+							<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>" alt="<?php echo $espectaculo->name; ?>" width="100">
+						</td>
 						<td><?php echo $espectaculo->tickets; ?></td>
 						<td><?php echo '$', $espectaculo->price; ?></td>
 						<td>

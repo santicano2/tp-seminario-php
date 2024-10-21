@@ -17,8 +17,9 @@ Stack
 TODO:
 **************************
 
-- Ver imagenes de las peliculas en la tabla y en show
 - Actualizar imagen
+- Hacer una lista de ventas realizadas.
 - Carousel
 - Agregar datos a la hora de comprar
+- Personalizar UI, hacerlo mas horizontal
 - Personalizar 404

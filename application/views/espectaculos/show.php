@@ -1,6 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="mb-4 bg-dark bg-opacity-50 rounded-3 p-4">
 	<h1 class="text-center text-white my-3 fw-bold text-decoration-underline"><?php echo $title; ?></h1>
+	<div class="d-flex justify-content-center">
+		<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>" alt="<?php echo $espectaculo->name; ?>" width="100">
+	</div>
 	<div class=" d-flex justify-content-center gap-5">
 		<div class="text-center">
 			<h3>Tickets</h3>
