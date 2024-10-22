@@ -17,7 +17,7 @@
 
 <body class="d-flex flex-column min-vh-100 bg-dark m-0 p-0" style="font-family: 'Noto Sans', sans-serif;">
 	<?php $this->load->view('components/navbar') ?>
-	<main class="d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-info bg-gradient bg-opacity-50 flex-grow-1 text-white w-100">
+	<main class="d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-black flex-grow-1 text-white w-100">
 		<?php $this->load->view($innerViewPath) ?>
 	</main>
 	<?php $this->load->view('components/footer') ?>
