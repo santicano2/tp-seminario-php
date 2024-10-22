@@ -37,14 +37,14 @@
 		</button>
 	</div>
 
-	<div class="container-fluid mt-5">
+	<div class="container mt-5">
 		<h2>CARTELERA</h2>
 		<div class="row">
 			<?php foreach ($espectaculos as $espectaculo): ?>
-				<div class="col-sm-2 col-md-3 mb-4">
-					<div class="card h-100 border border-2 border-info rounded-0 text-white hover" style="width: 14rem;">
+				<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+					<div class="card h-100 border border-2 border-info rounded-0 text-white hover" style="width: 100%;">
 						<a href="<?php echo base_url('espectaculos/show/' . $espectaculo->id); ?>">
-							<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>" class="card-img-top" alt="<?php echo $espectaculo->name; ?>" style="height: 300px; object-fit: cover;">
+							<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>" class="card-img-top" alt="<?php echo $espectaculo->name; ?>" style="height: 400px; object-fit: cover;">
 						</a>
 						<div class="card-body bg-black text-center">
 							<h5 class="card-title">
