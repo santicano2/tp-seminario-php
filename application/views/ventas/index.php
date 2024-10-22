@@ -3,10 +3,10 @@
 <div class="table-responsive px-5">
 	<table class="table table-bordered table-dark table-striped table-hover">
 		<thead>
-			<tr class="table-warning fs-5">
+			<tr class="table-warning fs-5 text-center">
 				<th scope="col">ID</th>
 				<th scope="col">Email del Comprador</th>
-				<th scope="col">Espectáculo</th>
+				<th scope="col">Película</th>
 				<th scope="col">Fecha compra</th>
 				<th scope="col">Cantidad de Tickets</th>
 				<th scope="col">Precio Total</th>
@@ -17,7 +17,7 @@
 
 			<?php if (!empty($ventas)): ?>
 				<?php foreach ($ventas as $venta): ?>
-					<tr>
+					<tr class="text-center align-middle">
 						<th scope="row"><?php echo $venta->id; ?></th>
 						<td><?php echo $venta->nombre_comprador; ?></td>
 						<td><?php echo $venta->pelicula; ?></td>

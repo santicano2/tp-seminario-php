@@ -3,7 +3,7 @@
 <div class="table-responsive px-5">
 	<table class="table table-bordered table-dark table-striped table-hover">
 		<thead>
-			<tr class="table-warning fs-5">
+			<tr class="table-warning fs-5 text-center">
 				<th scope="col">#</th>
 				<th scope="col">Nombre</th>
 				<th scope="col">Email</th>
@@ -14,7 +14,7 @@
 
 			<?php if (!empty($usuarios)): ?>
 				<?php foreach ($usuarios as $usuario): ?>
-					<tr>
+					<tr class="text-center align-middle">
 						<th scope="row"><?php echo $usuario->id; ?></th>
 						<td><?php echo $usuario->name; ?></td>
 						<td><?php echo $usuario->email; ?></td>

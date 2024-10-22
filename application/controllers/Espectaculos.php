@@ -12,7 +12,7 @@ class Espectaculos extends CI_Controller
 	{
 
 		$main_data = [
-			'title' => 'Lista de espectáculos',
+			'title' => 'Lista de películas',
 			'innerViewPath' => 'espectaculos/index',
 			'espectaculos' => $this->espectaculo_model->get_all_espectaculos()
 		];
@@ -44,7 +44,7 @@ class Espectaculos extends CI_Controller
 		}
 
 		$main_data = [
-			'title' => 'Agregar espectáculo',
+			'title' => 'Agregar película',
 			'innerViewPath' => 'espectaculos/create',
 		];
 
@@ -127,7 +127,7 @@ class Espectaculos extends CI_Controller
 		}
 
 		$main_data = [
-			'title' => 'Editar espectáculo #' . $id,
+			'title' => 'Editar película #' . $id,
 			'innerViewPath' => 'espectaculos/edit',
 			'espectaculo' => $espectaulo
 		];

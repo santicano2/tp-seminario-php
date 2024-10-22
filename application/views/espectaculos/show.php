@@ -2,7 +2,10 @@
 <div class="bg-dark bg-opacity-50 rounded-3 p-4 d-flex align-items-center justify-content-evenly w-100">
 	<div class="d-flex">
 		<div class="d-flex flex-column justify-content-center">
-			<h1 class="text-white my-3 fw-bold text-decoration-underline"><?php echo $title; ?></h1>
+			<div class="d-flex gap-2 align-items-center justify-content-center">
+				<img src="<?php echo base_url('assets/img/movie-icon.svg'); ?>" alt="movie icon" width="30">
+				<h1 class="text-white my-3 fw-bold"><?php echo $title; ?></h1>
+			</div>
 			<div class="d-flex flex-column justify-content-evenly align-items-start gap-3">
 				<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>" alt="<?php echo $espectaculo->name; ?>" width="300">
 				<div class=" d-flex justify-content-center gap-5">

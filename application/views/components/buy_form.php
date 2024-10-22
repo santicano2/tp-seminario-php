@@ -24,10 +24,10 @@ $fecha_maxima = date('Y-m-d', strtotime('+2 weeks'));
 						max="<?php echo $fecha_maxima; ?>">
 				</div>
 			</div>
-			<button type="submit" class="btn btn-success" id="buyButton" disabled>Comprar</button>
+			<button type="submit" class="btn btn-success" id="buyButton" disabled>Comprar <i class="fa-solid fa-ticket"></i></button>
 			<?php if ($espectaculo->tickets <= 10): ?>
 				<div class="alert alert-warning mt-3 fw-bold text-center" role="alert">
-					Últimos tickets
+					Últimos tickets <i class="fa-solid fa-ticket"></i>
 				</div>
 			<?php endif; ?>
 		</form>

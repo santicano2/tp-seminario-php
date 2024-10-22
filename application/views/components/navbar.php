@@ -20,15 +20,15 @@
 						role="button"
 						data-bs-toggle="dropdown"
 						aria-expanded="false">
-						Espectáculos
+						Películas
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-							<a class="dropdown-item" href="<?php echo base_url('espectaculos'); ?>">Lista de espectáculos</a>
+							<a class="dropdown-item" href="<?php echo base_url('espectaculos'); ?>">Lista de películas</a>
 						</li>
 						<?php if ($this->session->userdata('role') == 'admin'): ?>
 							<li>
-								<a class="dropdown-item" href="<?php echo base_url('/espectaculos/create'); ?>">Agregar espectáculo</a>
+								<a class="dropdown-item" href="<?php echo base_url('/espectaculos/create'); ?>">Agregar película</a>
 							</li>
 						<?php endif; ?>
 					</ul>

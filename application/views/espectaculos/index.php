@@ -3,7 +3,7 @@
 <div class="table-responsive px-5">
 	<table class="table table-bordered table-dark table-striped table-hover">
 		<thead>
-			<tr class="table-warning fs-5">
+			<tr class="table-warning fs-5 text-center">
 				<th scope="col">#</th>
 				<th scope="col">Nombre</th>
 				<th scope="col">Poster</th>
@@ -16,11 +16,11 @@
 
 			<?php if (!empty($espectaculos)): ?>
 				<?php foreach ($espectaculos as $espectaculo): ?>
-					<tr>
+					<tr class="text-center align-middle">
 						<th scope="row"><?php echo $espectaculo->id; ?></th>
 						<td><?php echo $espectaculo->name; ?></td>
 						<td>
-							<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>" alt="<?php echo $espectaculo->name; ?>" width="100">
+							<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>" alt="<?php echo $espectaculo->name; ?>" width="50">
 						</td>
 						<td><?php echo $espectaculo->tickets; ?></td>
 						<td><?php echo '$', $espectaculo->price; ?></td>
