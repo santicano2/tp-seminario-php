@@ -15,7 +15,7 @@
 </style>
 
 <div class="d-flex flex-column justify-content-center align-items-center">
-	<h1 class="mt-5">Más vistas</h1>
+	<h1 class="mt-5">MÁS VISTAS</h1>
 	<div id="carouselEspectaculos" class="carousel slide w-100" data-bs-ride="carousel">
 		<div class="carousel-inner">
 			<?php foreach ($espectaculos as $index => $espectaculo): ?>
@@ -23,9 +23,6 @@
 					<a href="<?php echo base_url('espectaculos/show/' . $espectaculo->id); ?>">
 						<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>"
 							class="d-block w-100 carousel-img" alt="<?php echo $espectaculo->name; ?>">
-						<div class="carousel-caption d-none d-md-block">
-							<h5><?php echo $espectaculo->name; ?></h5>
-						</div>
 					</a>
 				</div>
 			<?php endforeach; ?>
@@ -47,7 +44,7 @@
 				<div class="col-sm-2 col-md-3 mb-4">
 					<div class="card h-100 border border-2 border-info rounded-0 text-white hover" style="width: 14rem;">
 						<a href="<?php echo base_url('espectaculos/show/' . $espectaculo->id); ?>">
-							<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>" class="card-img-top" alt="<?php echo $espectaculo->name; ?>" style="height: 300px; object-fit: fit;">
+							<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>" class="card-img-top" alt="<?php echo $espectaculo->name; ?>" style="height: 300px; object-fit: cover;">
 						</a>
 						<div class="card-body bg-black text-center">
 							<h5 class="card-title">
@@ -55,12 +52,16 @@
 									<?php echo $espectaculo->name; ?>
 								</a>
 							</h5>
+							<?php if ($espectaculo->tickets == 0): ?>
+								<div class="text-danger fw-bold">AGOTADO</div>
+							<?php elseif ($espectaculo->tickets <= 10): ?>
+								<div class="text-warning fw-bold">Últimos tickets</div>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
 			<?php endforeach; ?>
 		</div>
 	</div>
-
 
 </div>

@@ -17,7 +17,6 @@ Stack
 TODO:
 **************************
 
-- Hacer cards de todas las peliculas en el home.php
 - Agregar datos a la hora de comprar
 - Personalizar UI, hacerlo mas horizontal
 - Personalizar 404
