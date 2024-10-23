@@ -17,7 +17,6 @@ Stack
 TODO:
 **************************
 
-- Agregar info del cine en home.php, fotos del lugar e informacion
 - Agregar datos a la hora de comprar
 - Personalizar UI, hacerlo mas horizontal
 - Personalizar 404
