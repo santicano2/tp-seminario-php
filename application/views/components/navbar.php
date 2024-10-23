@@ -95,6 +95,12 @@
 						<?php endif; ?>
 					</ul>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link"
+						href=" <?php echo base_url('info') ?>">
+						Info
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>

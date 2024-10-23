@@ -4,18 +4,51 @@
 		object-fit: contain;
 	}
 
+	.carousel-header-img {
+		height: 400px;
+		object-fit: cover;
+	}
+
 	.hover {
 		transition: all 0.3s ease-in-out;
+	}
 
-		&:hover {
-			cursor: pointer;
-			transform: scale(1.02);
-		}
+	.hover:hover {
+		cursor: pointer;
+		transform: scale(1.02);
 	}
 </style>
 
+<div class="container ">
+	<div class="text-center mt-4">
+		<h1 class="fs-1 fw-bold">Cine Monte Grande</h1>
+		<p class="fs-5 fw-light">El mejor lugar para disfrutar de las últimas películas con tus amigos y familia. Contamos con salas equipadas con tecnología de punta para que vivas una experiencia cinematográfica inigualable.</p>
+	</div>
+	<div id="carouselHeader" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="<?php echo base_url('assets/img/cine1.jpg'); ?>" class="d-block w-100 carousel-header-img" alt="Cine Monte Grande">
+			</div>
+			<div class="carousel-item">
+				<img src="<?php echo base_url('assets/img/cine2.jpg'); ?>" class="d-block w-100 carousel-header-img" alt="Cine Monte Grande">
+			</div>
+			<div class="carousel-item">
+				<img src="<?php echo base_url('assets/img/cine3.jpg'); ?>" class="d-block w-100 carousel-header-img" alt="Cine Monte Grande">
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+</div>
+
 <div class="d-flex flex-column justify-content-center align-items-center">
-	<h1 class="mt-5">MÁS VISTAS</h1>
+	<h1 class="mt-5">POPULARES</h1>
 	<div id="carouselEspectaculos" class="carousel slide w-100" data-bs-ride="carousel">
 		<div class="carousel-inner">
 			<?php foreach ($espectaculos as $index => $espectaculo): ?>
