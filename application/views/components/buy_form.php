@@ -3,7 +3,6 @@
 <?php $success = $this->session->flashdata('success'); ?>
 <?php
 $hoy = date('Y-m-d');
-
 $fecha_maxima = date('Y-m-d', strtotime('+2 weeks'));
 ?>
 
@@ -24,7 +23,41 @@ $fecha_maxima = date('Y-m-d', strtotime('+2 weeks'));
 						max="<?php echo $fecha_maxima; ?>">
 				</div>
 			</div>
+
+			<!-- Tipo de asiento -->
+			<div class="form-group mb-3">
+				<label for="asiento">Tipo de Asiento:</label>
+				<select name="asiento" id="asiento" class="form-control">
+					<option value="Estándar">Estándar</option>
+					<option value="VIP">VIP</option>
+					<option value="Accesible">Accesible</option>
+				</select>
+			</div>
+
+			<!-- Forma de pago -->
+			<div class="form-group mb-3">
+				<label for="pago">Forma de Pago:</label>
+				<select name="pago" id="pago" class="form-control">
+					<option value="Tarjeta">Tarjeta de crédito</option>
+					<option value="Transferencia">Transferencia bancaria</option>
+					<option value="MercadoPago">Mercado Pago</option>
+				</select>
+			</div>
+
+			<!-- Correo electrónico -->
+			<div class="form-group mb-3">
+				<label for="emailClient">Correo electrónico:</label>
+				<input type="email" name="emailClient" id="emailClient" class="form-control" placeholder="Tu correo para confirmación" required>
+			</div>
+
+			<!-- Código promocional -->
+			<div class="form-group mb-3">
+				<label for="codigo">Código promocional (opcional):</label>
+				<input type="text" name="codigo" id="codigo" class="form-control" placeholder="Ingresa tu cupón de descuento">
+			</div>
+
 			<button type="submit" class="btn btn-success" id="buyButton" disabled>Comprar <i class="fa-solid fa-ticket"></i></button>
+
 			<?php if ($espectaculo->tickets <= 10): ?>
 				<div class="alert alert-warning mt-3 fw-bold text-center" role="alert">
 					Últimos tickets <i class="fa-solid fa-ticket"></i>

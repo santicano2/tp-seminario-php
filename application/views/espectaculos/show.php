@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="bg-dark bg-opacity-50 rounded-3 p-4 d-flex align-items-center justify-content-evenly w-100">
+<div class="bg-dark bg-opacity-25 p-3 d-flex align-items-center justify-content-evenly w-100">
 	<div class="d-flex">
 		<div class="d-flex flex-column justify-content-center">
 			<div class="d-flex gap-2 align-items-center justify-content-center">
