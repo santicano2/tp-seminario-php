@@ -22,11 +22,11 @@
 				<img src="<?php echo base_url('assets/img/cine3.jpg'); ?>" class="d-block w-100 carousel-header-img" alt="Cine Monte Grande">
 			</div>
 		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
+		<button class="carousel-control-prev bg-info bg-opacity-25" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Previous</span>
 		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
+		<button class="carousel-control-next bg-info bg-opacity-25" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Next</span>
 		</button>

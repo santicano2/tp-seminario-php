@@ -67,6 +67,12 @@
 						</ul>
 					</li>
 				<?php endif; ?>
+				<li class="nav-item">
+					<a class="nav-link"
+						href=" <?php echo base_url('info') ?>">
+						Info
+					</a>
+				</li>
 				<li class="nav-item dropdown">
 					<a
 						class="nav-link dropdown-toggle"
@@ -94,12 +100,6 @@
 							</li>
 						<?php endif; ?>
 					</ul>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link"
-						href=" <?php echo base_url('info') ?>">
-						Info
-					</a>
 				</li>
 			</ul>
 		</div>

@@ -36,11 +36,11 @@
 				<img src="<?php echo base_url('assets/img/cine3.jpg'); ?>" class="d-block w-100 carousel-header-img" alt="Cine Monte Grande">
 			</div>
 		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
+		<button class="carousel-control-prev bg-info bg-opacity-25" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Previous</span>
 		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
+		<button class="carousel-control-next bg-info bg-opacity-25" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Next</span>
 		</button>
@@ -49,22 +49,27 @@
 
 <div class="d-flex flex-column justify-content-center align-items-center">
 	<h1 class="mt-5">POPULARES</h1>
-	<div id="carouselEspectaculos" class="carousel slide w-100" data-bs-ride="carousel">
+	<div id="carouselEspectaculos" class="carousel slide w-100 position-relative" data-bs-ride="carousel">
 		<div class="carousel-inner">
 			<?php foreach ($espectaculos as $index => $espectaculo): ?>
 				<div class="carousel-item <?php echo $index == 0 ? 'active' : ''; ?>">
+					<!-- Fondo difuminado -->
+					<div class="position-absolute w-100 h-100" style="background-image: url('<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>'); 
+                    background-size: contain; background-position: center; filter: blur(10px); top: 0; left: 0; z-index: 0;">
+					</div>
+					<!-- Imagen principal -->
 					<a href="<?php echo base_url('espectaculos/show/' . $espectaculo->id); ?>">
 						<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>"
-							class="d-block w-100 carousel-img" alt="<?php echo $espectaculo->name; ?>">
+							class="d-block w-100 carousel-img position-relative" alt="<?php echo $espectaculo->name; ?>" style="z-index: 1;">
 					</a>
 				</div>
 			<?php endforeach; ?>
 		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselEspectaculos" data-bs-slide="prev">
+		<button class="carousel-control-prev bg-info bg-opacity-25" type="button" data-bs-target="#carouselEspectaculos" data-bs-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Previous</span>
 		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselEspectaculos" data-bs-slide="next">
+		<button class="carousel-control-next bg-info bg-opacity-25" type="button" data-bs-target="#carouselEspectaculos" data-bs-slide="next">
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Next</span>
 		</button>
