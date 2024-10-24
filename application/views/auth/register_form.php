@@ -2,6 +2,7 @@
 <?php $errors = $this->session->flashdata('errors'); ?>
 <?php $success = $this->session->flashdata('success'); ?>
 
+<h3>Cine Monte Grande</h3>
 <h1 class="text-white my-3"><?php echo $title; ?></h1>
 <form action="<?php echo base_url('auth/register'); ?>" method="POST" class="text-light bg-dark rounded-0 border border-2 border-primary p-4">
   <div class="mb-3">
@@ -21,7 +22,7 @@
     <input type="password" class="form-control bg-white text-dark border" id="confirm-password" name="confirm-password" placeholder="Confirmar contraseña">
   </div>
   <div class="d-flex justify-content-center p-2">
-    <button type="submit" class="btn btn-primary">Registrarse</button>
+    <button type="submit" class="btn btn-success">Registrarse</button>
   </div>
   <a href="<?php echo base_url('auth/login_form'); ?>" class="text-decoration-underline">¿Ya tenes una cuenta? Iniciar sesión</a>
   <?php if (isset($errors)): ?>

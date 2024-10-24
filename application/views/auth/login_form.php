@@ -1,6 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php $errors = $this->session->flashdata('errors'); ?>
 
+<h3>Cine Monte Grande</h3>
 <h1 class="text-white my-3"><?php echo $title; ?></h1>
 <form action="<?php echo base_url('auth/login'); ?>" method="POST" class="text-light bg-dark rounded-0 border border-2 border-primary p-4">
   <div class="mb-3">
