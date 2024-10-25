@@ -31,4 +31,9 @@
 			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
+	<div class="d-flex flex-column align-items-center justify-content-center mb-5">
+		<h4>Ubicación</h4>
+		<p class="fs-5">Mariano Acosta 56, Monte Grande, Buenos Aires</p>
+		<img src="<?php echo base_url('assets/img/mapa.jpg'); ?>" class="d-block w-50" alt="Cine Monte Grande mapa">
+	</div>
 </div>
