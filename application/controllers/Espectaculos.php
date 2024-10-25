@@ -138,7 +138,7 @@ class Espectaculos extends CI_Controller
 	public function update($id)
 	{
 		if ($this->session->userdata('role') != 'admin') {
-			show_error('No estas autorizado para realizar esta accion');
+			show_error('No estás autorizado para realizar esta acción');
 		}
 
 		$this->form_validation->set_rules('name', 'NOMBRE', 'required');
@@ -146,28 +146,14 @@ class Espectaculos extends CI_Controller
 		$this->form_validation->set_rules('price', 'PRECIO', 'required|integer|greater_than_equal_to[6000]|less_than_equal_to[10000]');
 
 		$this->form_validation->set_message('required', 'El campo %s es obligatorio');
-		$this->form_validation->set_message('integer', 'El campo %s debe ser un numero entero');
+		$this->form_validation->set_message('integer', 'El campo %s debe ser un número entero');
 		$this->form_validation->set_message('greater_than_equal_to', 'El campo %s debe ser mayor o igual a %s');
 		$this->form_validation->set_message('less_than_equal_to', 'El campo %s debe ser menor o igual a %s');
 
-		$txtimage = 'no_image.png';
+		$espectaculo = $this->espectaculo_model->get_espectaculo_by_id($id);
+		$txtimage = $espectaculo->image ?? 'no_image.png';  // Imagen actual o predeterminada
 
-		if (empty($_FILES['txtimage']['name'])) {
-			if ($this->form_validation->run() == false) {
-				$this->session->set_flashdata('errors', $this->form_validation->error_array());
-				redirect('espectaculos/edit/' . $id);
-			}
-
-			$espectaculo_data = [
-				'name' => $this->input->post('name'),
-				'tickets' => $this->input->post('tickets'),
-				'price' => $this->input->post('price'),
-				'image' => $txtimage
-			];
-
-			$this->espectaculo_model->update_espectaculo_by_id($id, $espectaculo_data);
-			redirect('espectaculos');
-		} else {
+		if (!empty($_FILES['txtimage']['name'])) {
 			$config = [
 				'upload_path' => './assets/img/uploads/',
 				'allowed_types' => 'gif|jpg|png',
@@ -176,26 +162,27 @@ class Espectaculos extends CI_Controller
 			$this->upload->initialize($config);
 
 			if ($this->upload->do_upload('txtimage')) {
-				$photo = $this->upload->data('file_name');
-
-				if ($this->form_validation->run() == false) {
-					$this->session->set_flashdata('errors', $this->form_validation->error_array());
-					redirect('espectaculos/edit/' . $id);
-				}
-
-				$espectaculo_data = [
-					'name' => $this->input->post('name'),
-					'tickets' => $this->input->post('tickets'),
-					'price' => $this->input->post('price'),
-					'image' => $photo
-				];
-
-				$this->espectaculo_model->update_espectaculo_by_id($id, $espectaculo_data);
-				redirect('espectaculos');
+				$txtimage = $this->upload->data('file_name');  // Nueva imagen subida
 			} else {
 				echo $this->upload->display_errors();
+				return;
 			}
 		}
+
+		if ($this->form_validation->run() == false) {
+			$this->session->set_flashdata('errors', $this->form_validation->error_array());
+			redirect('espectaculos/edit/' . $id);
+		}
+
+		$espectaculo_data = [
+			'name' => $this->input->post('name'),
+			'tickets' => $this->input->post('tickets'),
+			'price' => $this->input->post('price'),
+			'image' => $txtimage
+		];
+
+		$this->espectaculo_model->update_espectaculo_by_id($id, $espectaculo_data);
+		redirect('espectaculos');
 	}
 
 	public function delete($id)

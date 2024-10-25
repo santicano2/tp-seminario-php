@@ -17,6 +17,5 @@ Stack
 TODO:
 **************************
 
-- No cambiar imagen si no se edita
 - Agregar duración y descripcion de las peliculas.
 - Personalizar 404
