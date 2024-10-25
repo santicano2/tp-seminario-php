@@ -101,6 +101,9 @@
 					<ul class="dropdown-menu">
 						<?php if ($this->session->userdata('logged_in')): ?>
 							<li>
+								<a class="dropdown-item" href="<?php echo base_url('ventas/compras'); ?>">Mis compras</a>
+							</li>
+							<li>
 								<a class="dropdown-item" href="<?php echo base_url('auth/logout'); ?>">Cerrar sesión</a>
 							</li>
 						<?php else: ?>

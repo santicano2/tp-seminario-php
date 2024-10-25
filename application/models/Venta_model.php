@@ -18,4 +18,12 @@ class Venta_model extends CI_Model
 	{
 		return $this->db->insert('ventas', $venta_data);
 	}
+
+	public function get_ultimas_compras($email)
+	{
+		$this->db->where('nombre_comprador', $email);
+		$this->db->order_by('id', 'DESC');
+		$this->db->limit(3);
+		return $this->db->get('ventas')->result();
+	}
 }

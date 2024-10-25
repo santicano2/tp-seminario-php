@@ -34,4 +34,15 @@ class Ventas extends CI_Controller
 
 		$this->venta_model->add_venta($venta_data);
 	}
+
+	public function compras()
+	{
+		$main_data = [
+			'title' => 'Mis compras',
+			'innerViewPath' => 'ventas/compras',
+			'ventas' => $this->venta_model->get_ultimas_compras($this->session->userdata('email'))
+		];
+
+		$this->load->view('layouts/main', $main_data);
+	}
 }
