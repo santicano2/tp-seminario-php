@@ -8,9 +8,11 @@
 				<th scope="col">Email del Comprador</th>
 				<th scope="col">Película</th>
 				<th scope="col">Fecha compra</th>
-				<th scope="col">Cantidad de Tickets</th>
-				<th scope="col">Precio Total</th>
 				<th scope="col">Fecha show</th>
+				<th scope="col">Cantidad de Tickets</th>
+				<th scope="col">Asiento</th>
+				<th scope="col">Pago</th>
+				<th scope="col">Precio Total</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -22,9 +24,11 @@
 						<td><?php echo $venta->nombre_comprador; ?></td>
 						<td><?php echo $venta->pelicula; ?></td>
 						<td><?php echo $venta->fecha; ?></td>
-						<td><?php echo $venta->cantidad_tickets; ?></td>
-						<td><?php echo "$" . $venta->precio_total; ?></td>
 						<td><?php echo $venta->fecha_show; ?></td>
+						<td><?php echo $venta->cantidad_tickets; ?></td>
+						<td><?php echo $venta->asiento; ?></td>
+						<td><?php echo $venta->pago; ?></td>
+						<td><?php echo "$" . $venta->precio_total; ?></td>
 					</tr>
 				<?php endforeach; ?>
 			<?php else: ?>
