@@ -7,12 +7,12 @@
       <h1>Cine Monte Grande</h3>
         <h2 class="text-white my-3"><?php echo $title; ?></h2>
         <form action="<?php echo base_url('auth/login'); ?>" method="POST">
-          <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
+          <div class="mb-3 text-start">
+            <label for="email" class="form-label fw-bold">Email:</label>
             <input type="email" class="form-control bg-white text-dark border" id="email" name="email" placeholder="Ingrese su email">
           </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Contraseña:</label>
+          <div class="mb-3 text-start">
+            <label for="password" class="form-label fw-bold">Contraseña:</label>
             <input type="password" class="form-control bg-white text-dark border" id="password" name="password" placeholder="Ingrese una contraseña">
           </div>
           <div class="d-flex justify-content-center p-2 mb-2">
