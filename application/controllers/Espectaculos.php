@@ -231,6 +231,8 @@ class Espectaculos extends CI_Controller
 			$cantidad = $this->input->post('tickets');
 			$precio_total = $cantidad * $espectaculo->price;
 			$fecha = $this->input->post('fecha');
+			$asiento = $this->input->post('asiento');
+			$pago = $this->input->post('pago');
 
 			$this->load->model('venta_model');
 			$venta_data = [
@@ -238,7 +240,9 @@ class Espectaculos extends CI_Controller
 				'pelicula' => $pelicula,
 				'cantidad_tickets' => $cantidad,
 				'precio_total' => $precio_total,
-				'fecha_show' => $fecha
+				'fecha_show' => $fecha,
+				'asiento' => $asiento,
+				'pago' => $pago
 			];
 
 			$this->venta_model->add_venta($venta_data);

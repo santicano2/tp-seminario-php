@@ -20,14 +20,16 @@ class Ventas extends CI_Controller
 		$this->load->view('layouts/main', $main_data);
 	}
 
-	public function registrar_venta($nombre_comprador, $pelicula, $cantidad_tickets, $precio_total, $fecha)
+	public function registrar_venta($nombre_comprador, $pelicula, $cantidad_tickets, $precio_total, $fecha, $asiento, $pago)
 	{
 		$venta_data = [
 			'nombre_comprador' => $nombre_comprador,
 			'pelicula' => $pelicula,
 			'cantidad_tickets' => $cantidad_tickets,
 			'precio_total' => $precio_total,
-			'fecha_show' => $fecha
+			'fecha_show' => $fecha,
+			'asiento' => $asiento,
+			'pago' => $pago
 		];
 
 		$this->venta_model->add_venta($venta_data);
