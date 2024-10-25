@@ -1,10 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <h1 class="text-center text-white my-4"><?php echo $title; ?></h1>
-<div class="table-responsive px-5">
+<div class="table-responsive px-5 w-75">
 	<table class="table table-bordered table-dark table-striped table-hover">
 		<thead>
 			<tr class="table-warning fs-5 text-center">
-				<th scope="col">#</th>
+				<?php if ($this->session->userdata('role') == 'admin'): ?>
+					<th scope="col">#</th>
+				<?php endif; ?>
 				<th scope="col">Nombre</th>
 				<th scope="col">Poster</th>
 				<th scope="col">Tickets</th>
@@ -17,7 +19,9 @@
 			<?php if (!empty($espectaculos)): ?>
 				<?php foreach ($espectaculos as $espectaculo): ?>
 					<tr class="text-center align-middle">
-						<th scope="row"><?php echo $espectaculo->id; ?></th>
+						<?php if ($this->session->userdata('role') == 'admin'): ?>
+							<th scope="row"><?php echo $espectaculo->id; ?></th>
+						<?php endif; ?>
 						<td><?php echo $espectaculo->name; ?></td>
 						<td>
 							<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>" alt="<?php echo $espectaculo->name; ?>" width="50">
