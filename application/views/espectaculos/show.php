@@ -42,7 +42,7 @@
 <?php if ($this->session->flashdata('success')): ?>
 	<script>
 		setTimeout(function() {
-			window.location.href = "<?php echo base_url('espectaculos'); ?>";
+			window.location.href = "<?php echo base_url('espectaculos/confirmacion'); ?>";
 		}, 3000);
 	</script>
 <?php endif; ?>

@@ -35,4 +35,17 @@ class Espectaculo_model extends CI_Model
 	{
 		$this->db->delete('espectaculos', ['id' => $id]);
 	}
+
+	public function obtener_ultima_compra($email)
+	{
+		$this->db->select('*');
+		$this->db->from('ventas');
+		$this->db->where('nombre_comprador', $email);
+		$this->db->order_by('fecha', 'DESC');
+		$this->db->limit(1); // Solo la última compra
+
+		$query = $this->db->get();
+
+		return $query->row();
+	}
 }

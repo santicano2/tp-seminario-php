@@ -17,7 +17,6 @@ Stack
 TODO:
 **************************
 
-- Pantalla de venta confirmada con datos de la venta.
 - Cambiar tamaño de lista peliculas, sacar ID de la vista cliente
 - Agregar mis compras para cada usuario
 - Agregar mapa a info

@@ -253,4 +253,15 @@ class Espectaculos extends CI_Controller
 			redirect('espectaculos/show/' . $id);
 		}
 	}
+
+	public function confirmacion()
+	{
+		$main_data = [
+			'title' => 'Confirmación de compra',
+			'innerViewPath' => 'espectaculos/confirmacion',
+			'compraData' => $this->espectaculo_model->obtener_ultima_compra($this->session->userdata('email'))
+		];
+
+		$this->load->view('layouts/main', $main_data);
+	}
 }
