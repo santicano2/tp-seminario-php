@@ -41,9 +41,6 @@
 				</form>
 			</div>
 		<?php endif; ?>
-		<div class="d-flex flex-column justify-content-center">
-			<p><?php echo $espectaculo->descripcion; ?></p>
-		</div>
 	</div>
 
 	<div>
@@ -51,10 +48,15 @@
 	</div>
 </div>
 
+<div class="bg-dark bg-opacity-25 p-3 d-flex flex-column justify-content-center align-items-center">
+	<p class="px-3" style="max-width: 50%;"><?php echo $espectaculo->descripcion; ?></p>
+</div>
+
+
 <?php if ($this->session->flashdata('success')): ?>
 	<script>
 		setTimeout(function() {
-			window.location.href = "<?php echo base_url('espectaculos/confirmacion'); ?>";
+			window.location.href = " <?php echo base_url('espectaculos/confirmacion'); ?>";
 		}, 3000);
 	</script>
 <?php endif; ?>
