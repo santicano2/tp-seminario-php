@@ -10,12 +10,21 @@
 				<img src="<?php echo base_url('assets/img/uploads/' . $espectaculo->image); ?>" alt="<?php echo $espectaculo->name; ?>" width="300">
 				<div class=" d-flex justify-content-center gap-5">
 					<div class="text-center">
-						<h3>Tickets</h3>
+						<p class="fw-bold">Tickets</p>
 						<p><?php echo $espectaculo->tickets; ?></p>
 					</div>
 					<div class="text-center">
-						<h3>Precio</h3>
+						<p class="fw-bold">Precio</p>
 						<p><?php echo '$' . $espectaculo->price; ?></p>
+					</div>
+					<div class="text-center">
+						<p class="fw-bold">Duración</p>
+						<p><?php
+								$horas = floor($espectaculo->duracion / 60);
+								$minutos = $espectaculo->duracion % 60;
+								echo "{$horas}h {$minutos}min";
+								?>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -32,6 +41,9 @@
 				</form>
 			</div>
 		<?php endif; ?>
+		<div class="d-flex flex-column justify-content-center">
+			<p><?php echo $espectaculo->descripcion; ?></p>
+		</div>
 	</div>
 
 	<div>

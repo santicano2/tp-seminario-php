@@ -17,5 +17,4 @@ Stack
 TODO:
 **************************
 
-- Agregar duración y descripcion de las peliculas.
 - Personalizar 404
