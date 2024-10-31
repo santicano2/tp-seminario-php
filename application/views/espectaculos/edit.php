@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<h1 class="text-white my-3"><?php echo $title; ?></h1>
-<form action="<?php echo base_url('espectaculos/update/') . $espectaculo->id; ?>" method="POST" enctype="multipart/form-data" class="text-light bg-dark rounded-0 border border-2 border-primary p-4">
+<h1 class="text-white my-2"><?php echo $title; ?></h1>
+<form action="<?php echo base_url('espectaculos/update/') . $espectaculo->id; ?>" method="POST" enctype="multipart/form-data" class="text-light bg-dark rounded bg-opacity-75 p-4 mb-3">
   <div class="mb-3">
     <label for="name" class="form-label fw-bold text-info">Nombre:</label>
     <input type="text" class="form-control bg-white text-dark border" id="name" name="name" value="<?php echo $espectaculo->name; ?>" placeholder="Ingrese el nombre" required>

@@ -4,7 +4,7 @@
 
 <div style="background-image: url('<?php echo base_url('assets/img/cine3.jpg'); ?>'); background-size: cover; background-position: center; width: 100vw; height: 85vh;">
   <div class="container d-flex justify-content-center align-items-center" style="height: 100%; background-color: rgba(0, 0, 0, 0.6);">
-    <div class="text-center text-white p-4 bg-dark rounded-0 border border-2 border-primary" style="width: 100%; max-width: 500px;">
+    <div class="text-center text-white px-4 py-3 bg-dark rounded bg-opacity-75" style="width: 100%; max-width: 500px;">
       <h1>Cine Monte Grande</h1>
       <h2 class="text-white my-3"><?php echo $title; ?></h2>
       <form action="<?php echo base_url('auth/register'); ?>" method="POST">
