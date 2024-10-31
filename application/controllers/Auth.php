@@ -108,7 +108,7 @@ class Auth extends CI_Controller
 			$this->session->set_userdata('email', $user->email);
 			$this->session->set_userdata('name', $user->name);
 			$this->session->set_userdata('role', $user->role);
-			redirect('espectaculos');
+			redirect('home');
 		} else {
 			$this->session->set_flashdata('errors', ['Credenciales incorrectas']);
 			redirect('auth/login_form');
