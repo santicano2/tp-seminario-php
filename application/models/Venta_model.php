@@ -11,8 +11,10 @@ class Venta_model extends CI_Model
 
 	public function get_all_ventas()
 	{
+		$this->db->order_by('fecha', 'DESC');
 		return $this->db->get('ventas')->result();
 	}
+
 
 	public function add_venta($venta_data)
 	{

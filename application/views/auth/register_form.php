@@ -5,22 +5,22 @@
 <div style="background-image: url('<?php echo base_url('assets/img/cine3.jpg'); ?>'); background-size: cover; background-position: center; width: 100vw; height: 85vh;">
   <div class="container d-flex justify-content-center align-items-center" style="height: 100%; background-color: rgba(0, 0, 0, 0.6);">
     <div class="text-center text-white px-4 py-3 bg-dark rounded bg-opacity-75" style="width: 100%; max-width: 500px;">
-      <h1>Cine Monte Grande</h1>
-      <h2 class="text-white my-3"><?php echo $title; ?></h2>
+      <h1 class="fs-4">Cine Monte Grande</h1>
+      <h2 class="text-white my-3 fs-5"><?php echo $title; ?></h2>
       <form action="<?php echo base_url('auth/register'); ?>" method="POST">
-        <div class="mb-3 text-start">
+        <div class="mb-2 text-start">
           <label for="email" class="form-label fw-bold">Email:</label>
           <input type="email" class="form-control bg-white text-dark border" id="email" name="email" placeholder="Ingrese su email">
         </div>
-        <div class="mb-3 text-start">
+        <div class="mb-2 text-start">
           <label for="name" class="form-label fw-bold">Nombre:</label>
           <input type="text" class="form-control bg-white text-dark border" id="name" name="name" placeholder="Ingrese su nombre">
         </div>
-        <div class="mb-3 text-start">
+        <div class="mb-2 text-start">
           <label for="password" class="form-label fw-bold">Contraseña:</label>
           <input type="password" class="form-control bg-white text-dark border" id="password" name="password" placeholder="Ingrese una contraseña">
         </div>
-        <div class="mb-3 text-start">
+        <div class="mb-2 text-start">
           <label for="confirm-password" class="form-label fw-bold">Confirmar Contraseña:</label>
           <input type="password" class="form-control bg-white text-dark border" id="confirm-password" name="confirm-password" placeholder="Confirmar contraseña">
         </div>
