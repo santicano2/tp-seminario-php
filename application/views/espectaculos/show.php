@@ -48,10 +48,12 @@
 	</div>
 </div>
 
-<div class="bg-dark bg-opacity-25 d-flex flex-column justify-content-center align-items-center">
-	<h4 class="px-3 text-decoration-underline">Descripción</h4>
-	<p class="px-3" style="max-width: 60%;"><?php echo $espectaculo->descripcion; ?></p>
-</div>
+<?php if ($espectaculo->descripcion): ?>
+	<div class="bg-dark bg-opacity-25 d-flex flex-column justify-content-center align-items-center">
+		<h4 class="px-3 text-decoration-underline">Descripción</h4>
+		<p class="px-3" style="max-width: 60%;"><?php echo $espectaculo->descripcion; ?></p>
+	</div>
+<?php endif; ?>
 
 
 <?php if ($this->session->flashdata('success')): ?>

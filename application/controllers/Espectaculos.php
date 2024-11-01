@@ -106,6 +106,8 @@ class Espectaculos extends CI_Controller
 					'name' => $this->input->post('name'),
 					'tickets' => $this->input->post('tickets'),
 					'price' => $this->input->post('price'),
+					'duracion' => $this->input->post('duracion'),
+					'descripcion' => $this->input->post('descripcion'),
 					'image' => $photo
 				];
 
